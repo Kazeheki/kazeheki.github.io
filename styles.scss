@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #abcdef;
+    padding: 0;
+    margin: 0;
+    color: #281237;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 260px 75px 260px 3fr 2fr;
+    grid-template-rows: 2fr 2fr 1fr 350px 1fr;
+    grid-template-areas: 
+        ". . . . . ."
+        ". . title title title title"
+        ". . . . . ."
+        ". card-left . card-right . ."
+        ". . . . . .";
+    width: 100vw;
+    height: 100vh;
+}
+
+.title {
+    grid-area: title;
+    font-size: 2em;
+
+    & h1 {
+        margin-bottom: 0;
+    }
+    & p {
+        margin-left: 100px;
+        margin-top: 0;
+    }
+}
+
+.card {
+
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    grid-template-rows: 30px 200px 1fr 1.5fr 1.5fr 30px;
+    grid-template-areas: 
+        ". . ."
+        ". image ."
+        ". . ."
+        ". title ."
+        ". description ."
+        ". . .";
+    background: white;
+    position: relative;
+
+    box-shadow: 
+        2px 2px 3px 2px rgba(0,0,0,.1),
+        3px 3px 4px 1px rgba(0,0,0,.1)
+    ;
+
+
+    &__image {
+        background: #ddd;
+        width: 100%;
+        height: 100%;
+        grid-area: image;
+        object-fit: contain;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 1.5em;
+        grid-area: title;
+    }
+
+    &__description {
+        grid-area: description;
+    }
+
+    &--left {
+        grid-area: card-left;
+    }
+
+    &--right {
+        grid-area: card-right;
+    }
+}
+
+.link--fill-parent {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    &__arrows {
+        position: absolute;
+        top: -5em;
+        left: -5em;
+        width: 25em;
+        height: 25em;
+    }
+
+    &__cycle {
+        position: absolute;
+        right: -50%;
+        bottom: -50%;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__github {
+        position: absolute;
+        right: 25px;
+        bottom: 10px;
+        color: #abcdef;
+
+        display: flex;
+
+        & img {
+            width: 35px;
+            height: 35px;
+        }
+
+        & p {
+            margin-right: 15px;
+        }
+    }
+}
