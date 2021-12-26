@@ -59,28 +59,30 @@
   <title>Kazeheki - Skills</title>
 </svelte:head>
 
-<p class="max-w-prose px-5 md:px-0">
-  So, you're interested in my skills in detail?<br />
-  Awesome!<br />
-  Here you can find a list of technologies and methodologies that I've already worked with. If a point
-  is <strong>bold</strong> it means I'm deeply interested in the element.
-</p>
+<div class="max-w-prose px-5 md:px-0 flex flex-col gap-5 items-center">
+  <p class="order-1">
+    So, you're interested in my skills in detail?<br />
+    Awesome!<br />
+    Here you can find a list of technologies and methodologies that I've already worked with. If a point
+    is <strong>bold</strong> it means I'm deeply interested in the element.
+  </p>
 
-<div class="columns-2 gap-16">
-  <ul>
-    {#each $filtered$ as item, index (index)}
-      <li animate:flip={{ duration: 300, delay: 100 }}>
-        {#if isMainInterest(item)}
-          <strong>{item}</strong>
-        {:else}
-          {item}
-        {/if}
-      </li>
-    {/each}
-  </ul>
-</div>
+  <div class="columns-2 gap-16 order-3 md:order-2">
+    <ul>
+      {#each $filtered$ as item, index (index)}
+        <li animate:flip={{ duration: 300, delay: 100 }}>
+          {#if isMainInterest(item)}
+            <strong>{item}</strong>
+          {:else}
+            {item}
+          {/if}
+        </li>
+      {/each}
+    </ul>
+  </div>
 
-<div>
-  Looking for something specific?
-  <input bind:value={$inputElement} class="px-1" placeholder="Type here to filter the list" />
+  <div class="order-2 md:order-3">
+    Looking for something specific?
+    <input bind:value={$inputElement} class="px-1" placeholder="Type here to filter the list" />
+  </div>
 </div>
