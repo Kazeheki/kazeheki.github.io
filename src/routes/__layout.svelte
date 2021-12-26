@@ -43,8 +43,8 @@
     @apply h-1;
     @apply absolute;
     @apply -bottom-0.5;
-    width: 120%;
-    left: -10%;
+    width: calc(100% + 14px);
+    left: -7px;
     @apply transition-all;
   }
 
