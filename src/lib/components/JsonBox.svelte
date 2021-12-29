@@ -39,7 +39,7 @@
 </script>
 
 <div
-  class="bg-primary-900 text-beryl_green font-mono px-7 md:px-16 py-5 rounded-2xl shadow-primary-900 shadow-md"
+  class="bg-primary-900 text-beryl_green font-mono px-7 md:px-16 py-5 rounded-2xl shadow-primary-900 shadow-md max-w-full"
 >
   <pre>
 			{@html text}
