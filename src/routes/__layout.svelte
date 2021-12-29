@@ -7,6 +7,17 @@
     <li><a href="/">Kazeheki</a></li>
     <li><a href="/skills">Skills</a></li>
     <li><a href="/contact">Contact</a></li>
+    <li>
+      <a href="https://github.com/Kazeheki">
+        <span>Visit</span>
+        <span class="hidden md:inline overflow-hidden">me on Github</span>
+        <img
+          alt="GitHub Logo"
+          class="inline-block relative -top-2"
+          src="static/GitHub-Mark/PNG/GitHub-Mark-32px.png"
+        />
+      </a>
+    </li>
   </ul>
 </nav>
 <div class="flex items-center flex-col gap-12 mt-20 mb-10">
