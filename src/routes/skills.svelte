@@ -70,18 +70,24 @@
     is <strong>bold</strong> it means I'm deeply interested in the element.
   </p>
 
-  <div class="columns-2 gap-16 order-3 md:order-2">
-    <ul>
-      {#each $filtered$ as item, index (index)}
-        <li animate:flip={{ duration: 300, delay: 100 }}>
-          {#if isMainInterest(item)}
-            <strong>{item}</strong>
-          {:else}
-            {item}
-          {/if}
-        </li>
-      {/each}
-    </ul>
+  <div class="order-3 md:order-2">
+    {#if $filtered$.length === 0}
+      <small>Seems like I've not worked with that before, sorry.</small>
+    {:else}
+      <div class="columns-2 gap-16 ">
+        <ul>
+          {#each $filtered$ as item, index (index)}
+            <li animate:flip={{ duration: 300, delay: 100 }}>
+              {#if isMainInterest(item)}
+                <strong>{item}</strong>
+              {:else}
+                {item}
+              {/if}
+            </li>
+          {/each}
+        </ul>
+      </div>
+    {/if}
   </div>
 
   <div class="order-2 md:order-3">
