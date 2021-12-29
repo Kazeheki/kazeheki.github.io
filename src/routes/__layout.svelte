@@ -4,15 +4,9 @@
 
 <nav class="w-screen flex justify-center fixed bg-beryl_green top-0 py-4">
   <ul class="flex max-w-prose w-80 justify-around">
-    <a href="/">
-      <li>Kazeheki</li>
-    </a>
-    <a href="/skills">
-      <li>Skills</li>
-    </a>
-    <a href="/contact">
-      <li>Contact</li>
-    </a>
+    <li><a href="/">Kazeheki</a></li>
+    <li><a href="/skills">Skills</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
 </nav>
 <div class="flex items-center flex-col gap-12 mt-20 mb-10">
