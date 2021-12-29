@@ -1,5 +1,10 @@
-<script>
+<script context="module" lang="ts">
+  export type TextFn = (txt: string) => string;
+</script>
+
+<script lang="ts">
   export let data = {};
+  export let specialTransform: TextFn;
 
   const color = {
     braces: 'text-amber-300',
@@ -27,6 +32,10 @@
   text = markBrackets(text);
   text = markCurlies(text);
   text = markStrings(text);
+
+  if (specialTransform) {
+    text = specialTransform(text);
+  }
 </script>
 
 <div
