@@ -21,7 +21,7 @@
   {#if status === 404}
     <div class="font-bold text-xl tracking-wide leading-loose">
       Sorry, I couldn't find that page.<br />
-      Do you want to return to the <a href="/">home page</a>?
+      Do you want to return to the <a href="/">home&nbsp;page</a>?
     </div>
   {:else}
     <div class="font-bold text-xl tracking-wide leading-loose">
