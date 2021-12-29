@@ -49,7 +49,10 @@
 
   const filtered$ = inputElement.pipe(
     map((input) => {
-      const regex = new RegExp(`.*${input}.*`, 'i');
+      return input.replace(new RegExp('([+\\*?])', 'g'), '\\$1');
+    }),
+    map((escapedInput) => {
+      const regex = new RegExp(`.*${escapedInput}.*`, 'i');
       return completeList.filter((item) => regex.test(item));
     })
   );
