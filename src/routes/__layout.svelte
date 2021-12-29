@@ -3,7 +3,7 @@
 </script>
 
 <nav class="w-screen flex justify-center fixed bg-beryl_green top-0 py-4">
-  <ul class="flex max-w-prose w-80 justify-around">
+  <ul class="flex max-w-prose justify-around gap-6">
     <li><a href="/">Kazeheki</a></li>
     <li><a href="/skills">Skills</a></li>
     <li><a href="/contact">Contact</a></li>
