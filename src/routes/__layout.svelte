@@ -2,7 +2,7 @@
   import '../app.css';
 </script>
 
-<nav class="w-screen flex justify-center fixed bg-beryl_green top-0 py-4">
+<nav class="w-screen flex justify-center fixed bg-beryl_green top-0 py-4 z-50">
   <ul class="flex max-w-prose justify-around gap-6">
     <li><a href="/">Kazeheki</a></li>
     <li><a href="/skills">Skills</a></li>
