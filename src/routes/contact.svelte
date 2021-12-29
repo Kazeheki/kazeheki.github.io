@@ -10,8 +10,8 @@
   };
 
   const specialTransform = (text) => {
-    text = text.replace(new RegExp(email), `<a href="mailto:${email}">${email}</a>`);
-    text = text.replace(new RegExp(github), `<a href="${github}">${github}</a>`);
+    text = text.replace(new RegExp(`"${email}"`), `<a href="mailto:${email}">"${email}"</a>`);
+    text = text.replace(new RegExp(`"${github}"`), `<a href="${github}">"${github}"</a>`);
     return text;
   };
 </script>
