@@ -3,7 +3,7 @@
 
   const data = {
     name: 'Kazeheki',
-    job_title: 'Software Developer',
+    job_title: 'Software&nbsp;Developer',
     main_skills: ['JavaScript', 'Angular', 'Java (EE)', 'Kubernetes'],
     main_interests: ['Frontend Development', 'UX', 'Game Development']
   };
