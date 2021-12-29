@@ -14,7 +14,7 @@
         <img
           alt="GitHub Logo"
           class="inline-block relative -top-2"
-          src="static/GitHub-Mark/PNG/GitHub-Mark-32px.png"
+          src="src/assets/GitHub-Mark/PNG/GitHub-Mark-32px.png"
         />
       </a>
     </li>
