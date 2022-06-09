@@ -1,0 +1,51 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "!docs/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.3.0
+        with:
+          node-version: "16.x"
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ${{GITHUB_WORKSPACE}}/node_modules
+          key: ${{runner.os}}-build-${{env.cache-name}}-${{hashFiles('**/package-lock.json')}}
+          
+      - name: Install dependencies
+        if: ${{steps.cache-node-modules.outputs.cache-hit == 'false'}}
+        run: npm install
+      
+      - name: Build
+        run: npm run build
+        
+      - name: Config git-user
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.mail "<>"
+        
+      - name: Commit and push
+        run: |
+          git add docs
+          git commit -m ":rocket: automatic build"
+          git push
+          
+
+          
+          
