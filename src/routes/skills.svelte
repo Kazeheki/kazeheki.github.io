@@ -17,7 +17,7 @@
   const gameDevelopment = ['Unity', 'Godot'];
   const specials = ['open62541'];
   const cloud = ['Azure', 'AWS', 'OpenShift'];
-  const cicd = ['Jenkins', 'Kubernetes', 'Helm', 'Git', 'ArgoCD'];
+  const cicd = ['Jenkins', 'Kubernetes', 'Helm', 'Git', 'ArgoCD', 'GitHub Actions'];
   const methodologies = ['Agile', 'Scrum', 'Kanban', 'GitOps', 'UX'];
 
   const completeList = frontend
