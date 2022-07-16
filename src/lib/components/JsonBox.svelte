@@ -42,6 +42,6 @@
   class="bg-primary-900 text-beryl_green font-mono mx-2 px-4 sm:px-7 md:px-16 py-5 rounded-2xl shadow-primary-900 shadow-md max-w-full"
 >
   <pre class="whitespace-pre-wrap">
-	  {@html text}
+{@html text}
   </pre>
 </div>
