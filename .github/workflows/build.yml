@@ -28,13 +28,26 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Config git-user
+      - name: Check if something to commit
+        id: check_commit
+        run: |
+          if [[ $(git status -su | wc -l) -eq 0 ]]
+          then
+          echo "needs_commit=false" >> $GITHUB_OUTPUT
+          else
+          echo "needs_commit=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Exit without commit
+        if: steps.check_commit.outputs.needs_commit == 'false'
+        run: echo "Build had nothing to commit" >> $GITHUB_STEP_SUMMARY
+
+      - name: Commit and push
+        if: steps.check_commit.outputs.needs_commit == 'true'
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.mail "<>"
-
-      - name: Commit and push
-        run: |
           git add docs
           git commit -m ":rocket: automatic build"
           git push
+          echo "### Build successful" >> $GITHUB_STEP_SUMMARY
