@@ -11,11 +11,7 @@
       <a href="https://github.com/Kazeheki">
         <span>Visit</span>
         <span class="hidden md:inline overflow-hidden">me on Github</span>
-        <img
-          alt="GitHub Logo"
-          class="inline-block relative -top-2"
-          src="/GitHub-Mark-32px.png"
-        />
+        <img alt="GitHub Logo" class="inline-block relative -top-2" src="/GitHub-Mark-32px.png" />
       </a>
     </li>
   </ul>
