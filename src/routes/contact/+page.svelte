@@ -16,4 +16,8 @@
   };
 </script>
 
+<svelte:head>
+  <title>Kazeheki - Contact</title>
+</svelte:head>
+
 <JsonBox {data} {specialTransform} />
