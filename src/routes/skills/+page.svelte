@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BehaviorSubject, debounceTime, map, tap } from 'rxjs';
+  import { BehaviorSubject, map } from 'rxjs';
   import { flip } from 'svelte/animate';
 
   const frontend = [
