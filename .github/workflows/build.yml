@@ -12,25 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.3.0
-        with:
-          node-version: '16.x'
-
-      - name: Cache node_modules
-        id: cache-node-modules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ${GITHUB_WORKSPACE}/node_modules
-          key: ${{runner.os}}-build-${{env.cache-name}}-${{hashFiles('**/package-lock.json')}}
-
-      - name: Install dependencies
-        run: npm install
+      - uses: ./.github/actions/setup.yaml
 
       - name: Build
         run: npm run build
