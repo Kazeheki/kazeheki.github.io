@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/setup.yaml
+      - uses: ./.github/actions/setup
 
       - name: Build
         run: npm run build
