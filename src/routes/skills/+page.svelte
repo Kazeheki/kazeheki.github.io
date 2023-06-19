@@ -13,12 +13,22 @@
     'TailwindCSS',
     'RxJS'
   ];
-  const backend = ['Java', 'NodeJS', 'Python', 'C#', 'C++'];
+  const backend = ['Java', 'NodeJS', 'Python', 'C#', 'C++', 'Quarkus'];
   const gameDevelopment = ['Unity', 'Godot'];
-  const specials = ['open62541'];
+  const specials = ['open62541', 'oauth2-proxy'];
   const cloud = ['Azure', 'AWS', 'OpenShift'];
-  const cicd = ['Jenkins', 'Kubernetes', 'Helm', 'Git', 'ArgoCD', 'GitHub Actions'];
+  const cicd = [
+    'Jenkins',
+    'Kubernetes',
+    'Helm',
+    'Git',
+    'ArgoCD',
+    'GitHub Actions',
+    'Sealed Secrets',
+    'External Secrets'
+  ];
   const methodologies = ['Agile', 'Scrum', 'Kanban', 'GitOps', 'UX'];
+  const databases = ['PostgreSQL'];
 
   const completeList = frontend
     .concat(backend)
@@ -27,18 +37,10 @@
     .concat(cloud)
     .concat(cicd)
     .concat(methodologies)
+    .concat(databases)
     .sort((a, b) => a.localeCompare(b));
 
-  const mainInterests = [
-    'JavaScript',
-    'TypeScript',
-    'Angular 2+',
-    'Godot',
-    'HTML + CSS',
-    'Tailwind',
-    'Kubernetes',
-    'UX'
-  ];
+  const mainInterests = ['TypeScript', 'Angular 2+', 'RxJS', 'Kubernetes', 'UX', 'Quarkus'];
 
   function isMainInterest(item: string) {
     return mainInterests.includes(item);
