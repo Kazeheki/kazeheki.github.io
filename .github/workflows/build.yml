@@ -46,7 +46,7 @@ jobs:
         if: steps.check_commit.outputs.needs_commit == 'true'
         run: |
           git config user.name "GitHub Actions Bot"
-          git config user.mail "<>"
+          git config user.email "<>"
           git add docs
           git commit -m ":rocket: automatic build"
           git push
