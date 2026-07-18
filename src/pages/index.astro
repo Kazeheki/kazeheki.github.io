@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+---
+
+<BaseLayout>
+  <main class="intro">
+    <section class="intro-card">
+      <Eyebrow text="about">
+        <h1>Welcome</h1>
+      </Eyebrow>
+
+      <div class="content">
+        <p>I started on Neopets.</p>
+        <p>
+          Now I untangle enterprise systems for the automotive industry. My title says
+          Leading Technical Consultant, but my days look like hands-on engineering
+          with a backend bias. I can step up as a tech lead, but I'd rather be in the
+          code. Brownfield or greenfield, legacy or launch-day — I work across the
+          stack to make complex things simple and tangled code clear. I'm also the
+          person who sits with the customer, asks the annoying questions, and finds
+          the requirements they forgot to mention. That usually means code, sometimes
+          means CI/CD or infrastructure, and lately it means figuring out what to ask
+          an LLM to get useful answers back.
+        </p>
+        <p>
+          That Neopets part matters. I learned this because I wanted to, not
+          because I had to.
+        </p>
+      </div>
+
+      <a class="cta" href="/skills">Checkout my toolbox</a>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .intro {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-4) 0 var(--space-8);
+  }
+
+  .intro-card {
+    width: min(100%, 44rem);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    padding: clamp(var(--space-6), 4vw, var(--space-8));
+    display: grid;
+    gap: var(--space-6);
+    position: relative;
+  }
+
+  .content {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .intro-card p {
+    max-width: 68ch;
+  }
+
+  .intro-card .cta {
+    margin: 0;
+  }
+</style>

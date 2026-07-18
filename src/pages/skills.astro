@@ -1,0 +1,96 @@
+---
+import Eyebrow from "../components/Eyebrow.astro";
+import Chip from "../components/Chip.astro";
+import { skills, skillCategories } from "../data/skills";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Skillcard from "../components/Skillcard.astro";
+---
+
+<script>
+    import "../scripts/skills.ts";
+</script>
+
+<BaseLayout>
+    <main id="skills-content">
+        <Eyebrow text="toolkit">
+            <h1>Skills</h1>
+        </Eyebrow>
+
+        <input
+            id="q"
+            type="search"
+            placeholder="Search skills"
+            autocomplete="off"
+        />
+
+        <div class="filters" id="filters">
+            <Chip content="all" active={true} />
+            {
+                skillCategories.map((category) => (
+                    <Chip content={category} active={false} />
+                ))
+            }
+        </div>
+
+        <ul id="list">
+            {
+                skills.map((skill) => (
+                   <Skillcard skill={skill} />
+                ))
+            }
+        </ul>
+
+        <p id="empty-indicator" hidden>
+            No skills match. Try a different word.
+        </p>
+    </main>
+</BaseLayout>
+
+<style>
+    main {
+        display: grid;
+        gap: var(--space-4);
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: var(--space-8) var(--space-4) var(--space-12);
+    }
+
+    input#q {
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius-md);
+        height: var(--size-lg);
+        box-shadow: var(--shadow-inset);
+        padding: 0 var(--space-4);
+        background-color: var(--color-bg);
+    }
+
+    input#q::placeholder {
+        color: var(--color-text-muted);
+    }
+
+    input#q:focus {
+        border-color: var(--color-accent);
+        box-shadow: var(--shadow-focus), var(--shadow-inset);
+    }
+
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+
+    ul#list {
+        display: grid;
+        gap: var(--space-3);
+        list-style: none;
+        margin-top: var(--space-2);
+    }
+
+    p#empty-indicator {
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius-md);
+        background-color: var(--color-surface);
+        color: var(--color-text-muted);
+        padding: var(--space-4);
+    }
+</style>

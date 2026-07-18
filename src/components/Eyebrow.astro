@@ -1,0 +1,32 @@
+---
+interface Props {
+    text: string;
+}
+const {text} = Astro.props;
+---
+
+<div class="eyebrow-container">
+<div class="eyebrow">{text}</div>
+<slot />
+</div>
+
+<style>
+    .eyebrow {
+        text-transform: uppercase;
+        font-size: var(--text-xs);
+        font-family: var(--font-mono);
+        font-weight: 700;
+        color: var(--color-text-muted);
+        opacity: 0.95;
+        letter-spacing: 0.12em;
+        display: inline-block;
+        transform: translateY(var(--space-2));
+    }
+
+    .eyebrow-container {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--space-2) / 4);
+    }
+
+</style>

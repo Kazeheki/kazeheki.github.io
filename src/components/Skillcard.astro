@@ -1,0 +1,75 @@
+---
+import type { Skill } from "../data/skills";
+
+interface Props {
+    skill: Skill;
+    idx?: number;
+}
+const { skill, idx } = Astro.props;
+
+const skillAttributes = {
+    "data-name": skill.name,
+    "data-category": skill.category,
+    ...(idx != null && { "data-index": idx }),
+};
+
+function getCertifiedString() {
+    return `certified (${skill.certification?.firstCertifiedAtYear})`
+}
+---
+
+<li {...skillAttributes}>
+    <div class="category">{skill.category}</div>
+    <div class="name">
+        {skill.name}
+        {
+            skill.certification != null
+            && Object.keys(skill.certification).length > 0
+            && (
+                <sup class="certification">{getCertifiedString()}</sup>
+            )
+        }
+    </div>
+</li>
+
+<style>
+    li {
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background-color: var(--color-surface);
+        box-shadow: var(--shadow-sm);
+        padding: var(--space-4);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "name category";
+        align-items: center;
+    }
+
+    li .name {
+        grid-area: name;
+        font-weight: 600;
+        color: var(--color-accent);
+    }
+
+    li .category {
+        text-transform: uppercase;
+        font-size: var(--text-xs);
+        font-family: var(--font-mono);
+        font-weight: 700;
+        color: var(--color-text-muted);
+        opacity: 0.95;
+        letter-spacing: 0.12em;
+    }
+
+    li .certification {
+        font-size: var(--text-xs);
+        font-weight: 100;
+        color: var(--color-text-muted);
+        padding-left: var(--space-2);
+    }
+
+    li[hidden] {
+        display: none !important;
+    }
+</style>
