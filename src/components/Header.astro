@@ -17,7 +17,8 @@ function normalizePath(path: string): string {
 
 function isCurrentPathThisPagePath(path: string): boolean {
     const normalizedPath = normalizePath(path);
-    return currentPath === normalizedPath;
+    const normalizeCurrentPath = normalizePath(currentPath);
+    return normalizeCurrentPath === normalizedPath;
 }
 
 function getClassList(path: string): any {
