@@ -1,11 +1,36 @@
 ---
 const currentPath = Astro.url.pathname;
+
+function normalizePath(path: string): string {
+    let normalizedPath = path;
+    if (normalizedPath == null) {
+        normalizedPath = "";
+    }
+    if (!normalizedPath.startsWith("/")) {
+        normalizedPath = `/${normalizedPath}`;
+    }
+    if (normalizedPath.length > 1 && normalizedPath.endsWith("/")) {
+        normalizedPath = normalizedPath.slice(0, -1);
+    }
+    return normalizedPath;
+}
+
+function isCurrentPathThisPagePath(path: string): boolean {
+    const normalizedPath = normalizePath(path);
+    return currentPath === normalizedPath;
+}
+
+function getClassList(path: string): any {
+    return {
+        active: isCurrentPathThisPagePath(path)
+    };
+}
 ---
 
 <nav>
     <div class="wrapper">
-        <a href="/" class={currentPath == "/" ? "active" : ""}> Kazeheki </a>
-        <a href="/skills" class={currentPath == "/skills" ? "active" : ""}>
+        <a href="/" class:list={getClassList("/")}> Kazeheki </a>
+        <a href="/skills" class:list={getClassList("/skills")}>
             Skills
         </a>
         <a href="https://github.com/kazeheki" target="_blank">
